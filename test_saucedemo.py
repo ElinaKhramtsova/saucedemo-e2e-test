@@ -19,7 +19,7 @@ def test_saucedemo():
     time.sleep(1)
     # Проверка, что товар в корзине
     item_name = driver.find_element(By.CLASS_NAME, "inventory_item_name").text
-    assert "Sauce Labs Backpack" in item_name
+    assert "Sauce Labs Backpack" in item_name, "Товар не найден в корзине"
     # Оформление заказа
     driver.find_element(By.ID, "checkout").click()
     driver.find_element(By.ID, "first-name").send_keys("Test")
@@ -33,10 +33,6 @@ def test_saucedemo():
     time.sleep(1)
     # Проверка успешного завершения
     complete_text = driver.find_element(By.CLASS_NAME, "complete-header").text
-    assert "THANK YOU FOR YOUR ORDER" in complete_text.upper()
-    print("Тест пройден успешно.")
+    assert "THANK YOU FOR YOUR ORDER" in complete_text.upper(), "Покупка не завершена"
     time.sleep(2)
     driver.quit()
-
-if __name__ == "__main__":
-    test_saucedemo()

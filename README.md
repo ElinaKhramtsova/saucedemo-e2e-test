@@ -46,7 +46,7 @@
 ### Запуск теста
 
 ```bash
-python test_saucedemo.py
+pytest test_saucedemo.py -v
 ```
 
 После запуска откроется браузер, и тест выполнит все шаги автоматически.
@@ -56,5 +56,5 @@ python test_saucedemo.py
 ### Пример успешного результата
 
 ```
-Тест пройден успешно
+test_saucedemo.py::test_saucedemo PASSED
 ```
